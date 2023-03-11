@@ -1,12 +1,16 @@
-import {View} from 'react-native';
 import React from 'react';
-import {RNText} from '../src/components/core';
+import {RNText, RNView} from '../src/components/core';
 
 const HealthCareApp = () => {
   return (
-    <View style={{flex: 1}}>
-      <RNText text={'Duong Quang'} fill textAlign="left" width={10} />
-    </View>
+    <RNView fill center>
+      <RNText
+        text={'Duong Quang'}
+        textAlign="left"
+        fontSize={30}
+        fontFamilyWeight="Bold"
+      />
+    </RNView>
   );
 };
 export default HealthCareApp;

@@ -33,7 +33,7 @@
   //   "babel.config.js",
   //   "metro.config.js"
   // ],
-  "include": [
-    "src"
-  ]
+  // "include": [
+  //   "src"
+  // ]
 }

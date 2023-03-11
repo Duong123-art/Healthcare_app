@@ -1,9 +1,10 @@
 import {Text, StyleSheet} from 'react-native';
 import React from 'react';
-import Fonts from 'themes/fonts';
+import Fonts from 'themes/Fonts';
 
 interface IRNTextProps {
   text?: String;
+  font?: String;
   color?: String;
   line?: Number;
   center?: Boolean;
@@ -13,6 +14,8 @@ interface IRNTextProps {
   mHorizontal?: Number;
   mVertical?: Number;
   textAlign?: 'auto' | 'center' | 'justify' | 'left' | 'right';
+  fontFamilyWeight?: 'regular' | 'light' | 'medium' | 'semiBold' | 'Bold';
+  fontSize?: Number;
   width?: Number;
   height?: Number;
 }
@@ -28,6 +31,8 @@ const RNText = ({
   mBottom,
   mHorizontal,
   mVertical,
+  fontFamilyWeight,
+  fontSize,
   width,
   height,
 }: IRNTextProps) => {
@@ -44,6 +49,8 @@ const RNText = ({
         mBottom && {marginBottom: mBottom},
         width && {width: width},
         height && {height: height},
+        fontSize && {fontSize: fontSize},
+        fontFamilyWeight && {fontFamily: Fonts.type[fontFamilyWeight]},
       ]}
       numberOfLines={line}>
       {text}
@@ -60,53 +67,5 @@ const styles = StyleSheet.create({
   },
   center: {
     justifyContent: 'center',
-  },
-  regular12: {
-    fontSize: Fonts.size.S12,
-    fontFamily: Fonts.type.regular,
-  },
-  regular14: {
-    fontSize: Fonts.size.S14,
-    fontFamily: Fonts.type.regular,
-  },
-  regular16: {
-    fontSize: Fonts.size.S16,
-    fontFamily: Fonts.type.regular,
-  },
-  regular18: {
-    fontSize: Fonts.size.S18,
-    fontFamily: Fonts.type.regular,
-  },
-  regular20: {
-    fontSize: Fonts.size.S20,
-    fontFamily: Fonts.type.regular,
-  },
-  regular24: {
-    fontSize: Fonts.size.S24,
-    fontFamily: Fonts.type.regular,
-  },
-  demiBold10: {
-    fontSize: Fonts.size.S12,
-    fontFamily: Fonts.type.demiBold,
-  },
-  demiBold14: {
-    fontSize: Fonts.size.S14,
-    fontFamily: Fonts.type.demiBold,
-  },
-  demiBold16: {
-    fontSize: Fonts.size.S16,
-    fontFamily: Fonts.type.demiBold,
-  },
-  demiBold18: {
-    fontSize: Fonts.size.S18,
-    fontFamily: Fonts.type.demiBold,
-  },
-  demiBold20: {
-    fontSize: Fonts.size.S20,
-    fontFamily: Fonts.type.demiBold,
-  },
-  demiBold24: {
-    fontSize: Fonts.size.S24,
-    fontFamily: Fonts.type.demiBold,
   },
 });

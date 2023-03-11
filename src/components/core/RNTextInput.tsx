@@ -7,7 +7,7 @@ interface ITextInputProps {
   isHiddenTitle: String;
 }
 
-const RNTextField = ({title, placeholder, isHiddenTitle}: ITextInputProps) => {
+const RNTextInput = ({title, placeholder, isHiddenTitle}: ITextInputProps) => {
   return (
     <View style={styles.container}>
       {!isHiddenTitle && <Text style={styles.titleStyle}>{title}</Text>}
@@ -21,7 +21,7 @@ const RNTextField = ({title, placeholder, isHiddenTitle}: ITextInputProps) => {
   );
 };
 
-export default RNTextField;
+export default RNTextInput;
 
 const styles = StyleSheet.create({
   container: {flex: 1, justifyContent: 'space-evenly'},
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   },
   underCoreStyle: {
     height: 1,
-    backgroundColor: colors.gray_100,
+    backgroundColor: 'red',
     alignSelf: 'stretch',
     marginRight: 10,
     opacity: 0.5,
