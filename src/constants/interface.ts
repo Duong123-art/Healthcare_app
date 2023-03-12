@@ -1,3 +1,4 @@
+import React from 'react';
 import {TextProps, ViewProps, ViewStyle, TextInputProps} from 'react-native';
 
 export interface IRNTextProps extends TextProps {
@@ -74,4 +75,8 @@ export interface ITextInputProps extends TextInputProps {
   width?: Number | String;
   height?: Number | String;
   backgroundColor?: String;
+}
+
+export interface IContainerProps {
+  children?: React.ReactNode;
 }
