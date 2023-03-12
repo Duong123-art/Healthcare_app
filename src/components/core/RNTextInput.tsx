@@ -1,23 +1,23 @@
 import React from 'react';
-import {View, TextInput, Text, StyleSheet} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {TextInput, StyleSheet} from 'react-native';
+
+import {RNView, RNText} from '../core';
 
 interface ITextInputProps {
   title?: String;
-  placeholder?: String;
-  isHiddenTitle: String;
+  iconName?: String;
+  // placeholder?: String;
+  // isHiddenTitle: String;
 }
 
-const RNTextInput = ({title, placeholder, isHiddenTitle}: ITextInputProps) => {
+const RNTextInput = ({title}: ITextInputProps) => {
   return (
-    <View style={styles.container}>
-      {!isHiddenTitle && <Text style={styles.titleStyle}>{title}</Text>}
-      <View style={styles.textFieldWithIconContainer}>
-        <View style={styles.underCoreContainer}>
-          <TextInput style={{alignSelf: 'stretch'}} placeholder={placeholder} />
-          <View style={styles.underCoreStyle} />
-        </View>
-      </View>
-    </View>
+    <RNView>
+      {title && <RNText text={title} />}
+      <TextInput placeholder="" />
+      <Icon name="search" size={20} />
+    </RNView>
   );
 };
 
