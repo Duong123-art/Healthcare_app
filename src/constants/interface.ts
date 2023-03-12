@@ -2,7 +2,6 @@ import React from 'react';
 import {TextProps, ViewProps, ViewStyle, TextInputProps} from 'react-native';
 
 export interface IRNTextProps extends TextProps {
-  text?: String;
   font?: String;
   color?: String;
   line?: Number;
@@ -23,6 +22,7 @@ export interface IRNTextProps extends TextProps {
     | 'SmallText';
   width?: Number | String;
   height?: Number | String;
+  children?: React.ReactNode;
 }
 
 export interface IRNViewProps extends ViewProps {

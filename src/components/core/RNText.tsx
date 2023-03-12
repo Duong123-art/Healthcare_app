@@ -5,7 +5,6 @@ import {size, type} from 'themes/Fonts';
 import {IRNTextProps} from 'constants/interface';
 
 const RNText = ({
-  text,
   color,
   line,
   center,
@@ -19,6 +18,7 @@ const RNText = ({
   fontSize = 'Text',
   width,
   height,
+  children,
   ...more
 }: IRNTextProps) => {
   return (
@@ -39,7 +39,7 @@ const RNText = ({
       ]}
       numberOfLines={line}
       {...more}>
-      {text}
+      {children}
     </Text>
   );
 };
