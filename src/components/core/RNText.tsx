@@ -1,24 +1,8 @@
-import {Text, StyleSheet} from 'react-native';
 import React from 'react';
-import Fonts from 'themes/Fonts';
+import {Text, StyleSheet} from 'react-native';
 
-interface IRNTextProps {
-  text?: String;
-  font?: String;
-  color?: String;
-  line?: Number;
-  center?: Boolean;
-  fill?: Boolean;
-  mTop?: Number;
-  mBottom?: Number;
-  mHorizontal?: Number;
-  mVertical?: Number;
-  textAlign?: 'auto' | 'center' | 'justify' | 'left' | 'right';
-  fontFamilyWeight?: 'regular' | 'light' | 'medium' | 'semiBold' | 'Bold';
-  fontSize?: Number;
-  width?: Number;
-  height?: Number;
-}
+import {size, type} from 'themes/Fonts';
+import {IRNTextProps} from 'constants/interface';
 
 const RNText = ({
   text,
@@ -31,10 +15,11 @@ const RNText = ({
   mBottom,
   mHorizontal,
   mVertical,
-  fontFamilyWeight,
-  fontSize,
+  fontFamilyWeight = 'Medium',
+  fontSize = 'Text',
   width,
   height,
+  ...more
 }: IRNTextProps) => {
   return (
     <Text
@@ -49,10 +34,11 @@ const RNText = ({
         mBottom && {marginBottom: mBottom},
         width && {width: width},
         height && {height: height},
-        fontSize && {fontSize: fontSize},
-        fontFamilyWeight && {fontFamily: Fonts.type[fontFamilyWeight]},
+        fontSize && {fontSize: size[fontSize]},
+        fontFamilyWeight && {fontFamily: type[fontFamilyWeight]},
       ]}
-      numberOfLines={line}>
+      numberOfLines={line}
+      {...more}>
       {text}
     </Text>
   );
